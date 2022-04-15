@@ -40,9 +40,12 @@ fun main() {
     println(descendingSortedPerson)
 
     addObject()
-    var a = listOf(
-        jeep("")
-    )
+
+    var lexus  = Car("Kcb4578",78.90)
+    var toyota = Car("Kcb4578",67.34)
+    var nissan  = Car("Kcb4578",30.34)
+    var cars = listOf(lexus,toyota,nissan)
+    println(avgMileage(cars))
 
 }
 
@@ -79,20 +82,17 @@ fun addObject() {
     println(employees)
 
 }
-//a function that takes in a list of Car objects each with a
-//registration and mileage attribute and returns the average mileage of
-//all the vehicles in the list.
-data class Car(var registration: String, var Mileage: Int)
-    fun avgMileage(names: List<Car>):Double{
+data class Car(var registration: String, var mileage: Double)
+    fun avgMileage(motor: List<Car>):Double{
             var result=0.0
-            names.forEach { car ->
+            motor.forEach { car ->
                 result+=car.mileage
 
             }
 
-            return result/names.count()
+            return result/motor.count()
 
         }
 
-}
+
 
